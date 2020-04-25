@@ -1,0 +1,43 @@
+server:
+  port: 9008
+spring:
+  kafka:
+    #bootstrap-servers: http://${HOST_IP}:9092
+    bootstrap-servers: http://localhost:9092
+  sleuth:
+    messaging:
+      kafka:
+        enabled: true
+    sampler:
+      probability: 1.0
+  zipkin:
+    kafka:
+      topic: blunt-authorize
+    sender:
+      type: kafka
+  boot:
+    admin:
+      client:
+        # url: http://${HOST_IP}:9000
+        url: http://localhost:9000
+        instance:
+          health-url: http://host.docker.internal:9008/actuator/health
+          management-url: http://host.docker.internal:9008/actuator
+          service-url: http://host.docker.internal:9008
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+logging:
+  file:
+    path: C:/Users/kpaulpa/Documents/workArea/TechnicalWork/logs/blunt-authorize-service
+
+feign:
+  client:
+    config:
+      onboard-service:
+        connectTimeout: 1000
+        readTimeout: 1000
