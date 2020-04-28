@@ -1,0 +1,12 @@
+server:
+  port: 9008
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+jwt:
+  secret:
+    bluntuservalidation

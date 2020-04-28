@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <configuration>
   <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
-  <property name="APP_NAME" value="authorize-service"/>
+  <property name="APP_NAME" value="authentication-service"/>
   <property name="LOG_PATTERN_CONSOLE"
     value="%d{dd-MM-yyyy HH:mm:ss.SSS} %magenta([%thread]) %highlight(%-5level) %green([${APP_NAME},%X{X-B3-TraceId:-},%X{X-B3-SpanId:-},%X{X-Span-Export:-}]) %logger{36}.%M - %msg%n"/>
   ​
